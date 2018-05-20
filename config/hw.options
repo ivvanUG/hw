@@ -1,0 +1,27 @@
+#This file with the options for the hw test project
+#it can be altered if you known what are you doing, and you
+#use new set options into the Algorithm.
+#Everything that starts with a # is a comment, blank lines and spaces are skipped
+#unless they are enclosed by ".
+#"quotes" are special characters when they are not commented, you only must use
+#them in the definition of the short description
+#The option name is a single string, it can or can not start by -.
+#The option types can be: i=integer, d=double, s=string, j=integer vector, f=double vector
+#The 'set' value is true=1 or false=0, for other values the behaviour is undefined.
+#The 'set' variable is for using it to determine whether a default value can be
+#obtained from an option or from hard coding.
+#The default value is a single integer, double or string. In the case of a string
+#variable it must be enclosed by ".
+#The short description  of the option must be enclosed by ".
+#dependOn is mainly used by the vector arguments when its length depends on the value of other variable, but can be
+#used with other purposes.
+#The vector arguments are read at the end, in the order they are set in this file.
+#For the vector arguments, you must set the vector length instead of the default value.
+
+#All the option fields are mandatory and must be in the same row!!!.
+#option name   #option type=integer #set=1,unset=0  #default value #order or tag  #dependsOn #short description
+-inputfile      s                    1               in.txt          0             ""          "The name of input file."
+-nthreads       i                    1               1               1             ""          "Number of threads for parallel computing with openMP "
+-outputfile     s                    1               out.txt         2             ""          "The name of the output file."
+-print          i                    1               1               3             ""          "Printing level, the greater value, the more information is printed to the standard output."
+-logfile        s                    1               hw              4             ""          "The name of the logfile: name.log."
