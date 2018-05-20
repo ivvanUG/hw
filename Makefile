@@ -8,7 +8,7 @@ LDFLAGS=-std=gnu99   -Wall -O2 -fopenmp -Wno-unused-result
 OBJS:=$(patsubst %.c,%.o,$(wildcard *.c))
 HS:=$(wildcard *.h)
 
-MAIN=desgen
+MAIN=hw
 all:$(MAIN) $(HS)
 $(MAIN):$(OBJS)
 	$(LD) $(LDFLAGS) $(OBJS) -o $(MAIN) -lm

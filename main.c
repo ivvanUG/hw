@@ -17,11 +17,11 @@ On_InitRun(argc, argv,"config/hw.options");
    omp_set_num_threads(nthreads);
    if (print)
    {
-        #omp parallel
+        #pragma omp parallel
         {
-          if (omp_get_threadnum()==0)
-            printf("Master thread says: I am usin %d threads\n",omp_set_num_threads());
-          printf("Thread %d says: Hello world!\n",omp_get_threadnum()); 
+          if (omp_get_thread_num()==0)
+            printf("Master thread says: I am usin %d threads\n",omp_get_num_threads());
+          printf("Thread %d says: Hello world!\n",omp_get_thread_num());
         }
    }
 On_FinalizeRun();
