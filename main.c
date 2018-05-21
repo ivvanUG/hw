@@ -23,7 +23,12 @@ On_InitRun(argc, argv,"config/hw.options");
             printf("Master thread says: I am usin %d threads\n",omp_get_num_threads());
           printf("Thread %d says: Hello world!\n",omp_get_thread_num());
         }
+   }else
+   {
+      printf("The print option is set to 0, thus the process is silent\n");
    }
+
+
 On_FinalizeRun();
  return 0;
 }
