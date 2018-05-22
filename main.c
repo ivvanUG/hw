@@ -10,13 +10,15 @@ int main(int argc, char *argv[])
 //Sets the options for this application using the file in config/gibbs.options. Additional options can be set
 On_InitRun(argc, argv,"config/hw.options");
    iOptionStruct option;
-   option=Get_Option_By_Name("-print");
+   option=Get_Option_By_Name("-print"); //Printing option for verbose output
    print=option.ivalue;
-   option=Get_Option_By_Name("-nthreads");
+   option=Get_Option_By_Name("-nthreads"); //Number of omp threads
    nthreads=option.ivalue;
-   omp_set_num_threads(nthreads);
+
+   omp_set_num_threads(nthreads); //Setting the number of threads
    if (print==2)
    {
+       //Parallel region
         #pragma omp parallel
         {
           if (omp_get_thread_num()==0)
