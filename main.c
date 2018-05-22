@@ -15,7 +15,7 @@ On_InitRun(argc, argv,"config/hw.options");
    option=Get_Option_By_Name("-nthreads");
    nthreads=option.ivalue;
    omp_set_num_threads(nthreads);
-   if (print)
+   if (print==2)
    {
         #pragma omp parallel
         {
@@ -23,7 +23,7 @@ On_InitRun(argc, argv,"config/hw.options");
             printf("Master thread says: I am usin %d threads\n",omp_get_num_threads());
           printf("Thread %d says: Hello world!\n",omp_get_thread_num());
         }
-   }else
+   }else if(print==1)
    {
       printf("The print option is set to 0, thus the process is silent\n");
    }
